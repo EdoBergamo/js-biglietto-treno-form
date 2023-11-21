@@ -11,6 +11,10 @@
     <!-- Main -->
     <main>
         <h1>Biglietto Viaggio</h1>
+        <div id="input-nome">
+            <label for="name">Nome e Cognome</label>
+            <input type="text" id="name" required>
+        </div>
         <div id="input-km">
             <label for="km">Inserisci la distanza in KM</label>
             <input type="text" id="km" required>
@@ -23,6 +27,12 @@
                 <option value="maggiorenne">Maggiorenne</option>
                 <option value="over65">Over 65</option>
             </select>
+        </div>
+
+        <div id="biglietto" style="display: none;">
+            <p>Dettagli Passeggero</p>
+            <p id="fname"><strong>Nome</strong>: </p>
+            <p id="costo-biglietto"><strong>Costo Biglietto</strong>: </p>
         </div>
         <input type="submit" id="submit" value="Acquista">
     </main>
