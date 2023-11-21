@@ -12,12 +12,12 @@ const scontoUnder18 = 20;
 button.addEventListener("click", function () {
     let biglietto = km.value * prezzoPerKm;
     
-    if (eta.value < 18) {
+    if (eta.value == "minorenne") {
         biglietto -= (biglietto * scontoUnder18) / 100;
-    } else if (eta.value >= 65) {
+    } else if (eta.value == "over65") {
         biglietto -= (biglietto * scontoOver65) / 100;
     }
-
+    
     if (DEBUG) {
         console.log(km.value, eta.value);
         console.log(biglietto.toFixed(2))
