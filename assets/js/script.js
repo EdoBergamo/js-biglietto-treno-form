@@ -13,22 +13,27 @@ const scontoUnder18 = 20;
 let bigliettoElement = document.getElementById("biglietto");
 let nomePasseggero = document.getElementById("fname");
 let costoBiglietto = document.getElementById("costo-biglietto");
+let scontoElement = document.getElementById("sconto");
 
 button.addEventListener("click", function () {
-    bigliettoElement.style.display = "block"
+    bigliettoElement.style.display = "block";
     let biglietto = km.value * prezzoPerKm;
+    let tipoSconto = "Prezzo standard";
     
     if (eta.value == "minorenne") {
         biglietto -= (biglietto * scontoUnder18) / 100;
+        tipoSconto = "Sconto del 20%";
     } else if (eta.value == "over65") {
         biglietto -= (biglietto * scontoOver65) / 100;
+        tipoSconto = "Sconto del 40%";
     }
 
     nomePasseggero.innerHTML += nome.value;
     costoBiglietto.innerHTML += biglietto.toFixed(2);
+    scontoElement.innerHTML = tipoSconto
 
     if (DEBUG) {
-        console.log(km.value, eta.value, nome.value);
+        console.log(km.value, eta.value, nome.value, tipoSconto);
         console.log(biglietto.toFixed(2));
     }
 })
